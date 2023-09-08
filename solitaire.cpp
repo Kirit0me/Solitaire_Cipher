@@ -85,7 +85,7 @@ public:
             }
             return static_cast<char>(decryptedValue + 'A' - 1);
         }
-        return input; // Non-alphabetic characters remain unchanged
+        return input; 
     }	
 
     std::string encrypt(const std::string& plaintext) {
@@ -108,12 +108,12 @@ private:
     int keystream_;
 
     void moveJokerA() {
-        moveJoker(53); // Value of the first joker
+        moveJoker(53); 
     }
 
     void moveJokerB() {
-        moveJoker(54); // Value of the second joker
-        moveJoker(54); // Second move for Joker B
+        moveJoker(54);
+        moveJoker(54);
     }
 
     void moveJoker(int jokerValue) {
@@ -166,7 +166,7 @@ private:
     void countCut() {
         int lastCard = deck_.back();
         if (lastCard == 53 || lastCard == 54) {
-            return; // Don't perform count cut if the last card is a joker
+            return; 
         }
 
         int count = lastCard;
@@ -236,7 +236,7 @@ int main(int argc, char* argv[]) {
 
         std::string ciphertext;
         std::cout << "Enter the ciphertext to decrypt: ";
-        std::cin.ignore(); // Ignore newline character from previous input
+        std::cin.ignore(); 
         std::getline(std::cin, ciphertext);
 
         std::string plaintext = solitaire.decrypt(ciphertext);
